@@ -18,11 +18,14 @@
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <!-- Post preview-->
 
+                    <!-- Divider-->
+                      <hr class="my-4" />
                 <% postList.forEach(function(post) {%>
                     <div class="post-preview">
                       <!--  <a href="/post/:">-->
                             <h2 class="post-title"><%= post.postTitle %></h2>
-                            <p><%= post.postContent.substring(0,200)+"....." %> <a href="/post/:<%= post.postTitle %>">Read More</a></p>
+                            <input type="hidden" value="<%= post._id %>" name="post_id"  ></input>
+                            <p><%= post.postContent.substring(0,200)+"....." %> <a href="/post/<%= post.postTitle %>">Read More</a></p>
                         </a>
                         <p class="post-meta">
                             Posted by
